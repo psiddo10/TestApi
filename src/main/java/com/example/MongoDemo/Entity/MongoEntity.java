@@ -1,11 +1,13 @@
-package com.example.MongoDemo.MongoDemo.Entity;
+package com.example.MongoDemo.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+import reactor.core.publisher.Flux;
+
+@Document(collection="mongoData")
 public class MongoEntity {
 	
 	private String symbol;
@@ -20,9 +22,9 @@ public class MongoEntity {
 //	private double low;
 //	private double at;
 	
-	public MongoEntity() {
-		this.data=new ArrayList<>();
-	}
+//	public MongoEntity() {
+//		this.data=new ArrayList<>();
+//	}
 	
 //	public List<MongoEntityData> getData() {
 //		return data;
@@ -31,6 +33,7 @@ public class MongoEntity {
 //	public void setData(List<MongoEntityData> data) {
 //		this.data = data;
 //	}
+	public MongoEntity() {}
 
 	public MongoEntity(String symbol, double buy, double sell, double high, double low, double at) {
 		super();
@@ -40,6 +43,10 @@ public class MongoEntity {
 //		this.high = high;
 //		this.low = low;
 //		this.at = at;
+	}
+
+	public MongoEntity(Flux<MongoEntity> mongo) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getSymbol() {

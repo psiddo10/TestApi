@@ -1,11 +1,12 @@
-package com.example.MongoDemo.MongoDemo.Entity;
+package com.example.MongoDemo.Entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
+@Document
 public class MongoEntityData {
 	
-	private int time;
+	private long time;
+	
 	private double close;
 	private double high;
 	private double low;
@@ -13,10 +14,45 @@ public class MongoEntityData {
 	private double volumefrom;
 	private double volumeto;
 	private String conversionType;
+	private double buy;
+	private double sell;
+	private long at;
 	
+
+
+
+	
+
+
 	public MongoEntityData() {}
 	
 	
+
+
+
+	
+
+
+	public void setAt(long at) {
+		time = at;
+	}
+
+
+	public void setBuy(double buy) {
+		close= buy;
+	}
+
+//
+//	public double getSell() {
+//		return sell;
+//	}
+
+
+	public void setSell(double sell) {
+		open = sell;
+	}
+
+
 	private MongoEntity moongo;
 	
 	public MongoEntity getMoongo() {
@@ -57,7 +93,7 @@ public class MongoEntityData {
 	}
 
 
-	public int getTime() {
+	public long getTime() {
 		return time;
 	}
 

@@ -1,4 +1,4 @@
-package com.example.MongoDemo.MongoDemo.Repository;
+package com.example.MongoDemo.Repository;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
-import com.example.MongoDemo.MongoDemo.Entity.MongoEntity;
+import com.example.MongoDemo.Entity.MongoEntity;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -15,7 +15,11 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface MongoRepo extends MongoRepository<MongoEntity, Integer> {
 
-	Flux<MongoEntity> saveAll(Flux<MongoEntity> file);
+//	Flux<MongoEntity> saveAll(Flux<MongoEntity> mongo);
+
+	
+//	Flux<MongoEntity> saveAll(Flux<MongoEntity> mongo);
+
 
 	
 
