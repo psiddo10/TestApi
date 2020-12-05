@@ -1,9 +1,11 @@
 package com.example.MongoDemo.Entity;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
 @Document
-public class MongoEntityData {
+@Component
+public class MongoEntityDataDb {
 	
 	private long time;
 	
@@ -19,7 +21,7 @@ public class MongoEntityData {
 	private long at;
 	
 
-	public MongoEntityData() {}
+	public MongoEntityDataDb() {}
 	
 	public void setAt(long at) {
 		time = at;
@@ -28,19 +30,22 @@ public class MongoEntityData {
 
 	public void setBuy(double buy) {
 		close= buy;
+		
 	}
 
+	
 
-	public void setSell(double sell) {
-		open = sell;
-	}
+	
+//	public void setSell(double close2) {
+//		open = close2;
+//	}
 
 
 	
 	
 
 
-	public MongoEntityData(int time, double close, double high, double low, double open, double volumefrom,
+	public MongoEntityDataDb(int time, double close, double high, double low, double open, double volumefrom,
 			double volumeto, String conversionType) {
 		super();
 		this.time = time;
